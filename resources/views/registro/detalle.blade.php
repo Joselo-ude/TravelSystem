@@ -6,7 +6,7 @@
 <table class="table" border='2'>
     <thead>
         <tr>
-            <th scope="col">ID</th>
+            
             <th scope="col">Identificación </th>
             <th scope="col">Nombres </th>
             <th scope="col">Apellidos </th>
@@ -18,7 +18,7 @@
     <tbody>
     @foreach($clientes as $c)
             <tr>
-                <td> {{ $c->id }} </td>
+                
                 <td> {{ $c->cedula }} </td>
                 <td> {{ $c->nombres }} </td>
                 <td> {{ $c->apellidos }} </td>
@@ -30,8 +30,8 @@
                     <td> Masculino </td>
                 @endif
 
-                <td> <a href="{{route('form_actualizaCli',$c->id)}}" class="btn btn-success">Editar</a></td>
-			    <td> <a href="{{route('elimina_Cliente', $c->id)}}" class="btn btn-danger">Eliminar</a> </td>
+                <td> <a href="{{route('form_actualizaCli',$c->cedula)}}" class="btn btn-success">Editar</a></td>
+			    <td> <a href="{{route('elimina_Cliente', $c->cedula)}}" class="btn btn-danger">Eliminar</a> </td>
             </tr>
     @endforeach
     </tbody>

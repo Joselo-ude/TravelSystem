@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master2')
    @section('content')
 
 <h1> Listado de Vuelos </h1> <br>

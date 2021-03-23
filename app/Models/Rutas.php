@@ -10,6 +10,6 @@ class Rutas extends Model
     protected $table = 'rutas';
 
     public function product(){
-        return $this->hasMany(Vuelos::class,'id');
+        return $this->hasMany(Vuelos::class,'id_ruta');
     }
 }

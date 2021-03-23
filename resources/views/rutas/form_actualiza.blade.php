@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master2')
    @section('content')
 
 <div class="container">
@@ -7,7 +7,7 @@
         @csrf
 
         <label for="idRuta">ID </label>
-        <input type="text" id='idRuta' name='idRuta' class="form-control" required value="{{$ruta->id}}"> <br> <br>
+        <input type="text" id='idRuta' name='idRuta' class="form-control" required value="{{$ruta->id}}" readonly> <br> <br>
 
         <label for="origenRuta">Origen - Destino </label>
         <input type="text" id='origenRuta' name='origenRuta' class="form-control" required value="{{$ruta->origen}}"> <br> <br>

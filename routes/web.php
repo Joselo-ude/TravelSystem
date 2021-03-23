@@ -5,6 +5,7 @@ use App\Http\Controllers\Travel;
 use App\Http\Controllers\Clientes;
 use App\Http\Controllers\Ruta;
 use App\Http\Controllers\Vuelo;
+use App\Http\Controllers\Visualizar;
 
 use App\Models\Rutas;
 use App\Models\Cliente;
@@ -46,6 +47,9 @@ Route::get('clientes/eliminar/{id}', [Clientes::class, 'eliminar'])
 //RUTAS
 
 Route::get('rutas', [Ruta::class, 'index'])
+	->name('listado_Rutas');
+    
+Route::get('rutas/detalle', [Ruta::class, 'index2'])
 	->name('listado_Ruta');
 
 Route::get('rutas/registrar', [Ruta::class, 'form_registro'])
@@ -65,6 +69,9 @@ Route::get('rutas/eliminar/{id}', [Ruta::class, 'eliminar'])
 
 //VUELOS
 Route::get('vuelos', [Vuelo::class, 'index'])
+	->name('listado_Vuelos');
+
+Route::get('compra', [Vuelo::class, 'index2'])
 	->name('listado_Vuelo');
 
 Route::get('vuelos/registrar', [Vuelo::class, 'form_registro'])
@@ -81,3 +88,14 @@ Route::post('vuelos/actualizar/{id}', [Vuelo::class, 'actualizar'])
 
 Route::get('vuelos/eliminar/{id}', [Vuelo::class, 'eliminar'])
 	->name('elimina_Vuelo');
+
+
+
+    Route::get('comprar', [Visualizar::class, 'registro'])
+	->name('form_registroC');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

@@ -5,23 +5,26 @@
         </button>
         
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" style="font: oblique bold 120% cursive;" href="{{ url('/') }}">Inicio<span class="sr-only"></span></a>
-            </li> 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" style="font: oblique bold 120% cursive;" href="{{ url('rutas') }}" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Rutas
+            
+            <li class="nav-item">
+                <a class="nav-link" style="font: oblique bold 120% cursive;" href="{{ url('rutas/detalle') }}" >
+                Rutas<span class="sr-only"></span></a>
                 
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" style="font: oblique bold 120% cursive;" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Compra
+            
+            <li class="nav-item">
+                <a class="nav-link" style="font: oblique bold 120% cursive;" href="{{ url('compra') }}" >
+                Compra<span class="sr-only"></span></a>
                 
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" style="font: oblique bold 120% cursive;" href="{{ url('clientes/registrar') }}" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Registrar
+            <li class="nav-item">
+                <a class="nav-link" style="font: oblique bold 120% cursive;" href="{{ url('clientes/registrar') }}" >
+                Registrar<span class="sr-only"></span></a>
+                
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font: oblique bold 120% cursive;" href="{{ url('login') }}" >
+                ADMIN<span class="sr-only"></span></a>
                 
             </li>
             

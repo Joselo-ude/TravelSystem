@@ -3,14 +3,12 @@
 
 <div class="container">
 <h1> Actualizacion de Clientes </h1>
-    <form action="{{route('actualiza_cliente', $cliente->id) }}" method="POST">
+    <form action="{{route('actualiza_cliente', $cliente->cedula) }}" method="POST">
         @csrf
 
-        <label for="idCli">ID </label>
-        <input type="null" id='idCli' name='idCli' class="form-control" required value="{{$cliente->id}}"> <br> <br>
-
+        
         <label for="cedulaCli">Cedula </label>
-        <input type="text" id='cedulaCli' name='cedulaCli' class="form-control" required value="{{$cliente->cedula}}"> <br> <br>
+        <input type="hidden" id='cedulaCli' name='cedulaCli' class="form-control" required value="{{$cliente->cedula}}"> <br> <br>
        
         <label for="nombreCli">Nombres</label>
         <input type="text" id='nombreCli' name='nombreCli' class="form-control" required value="{{$cliente->nombre}}"> <br> <br>

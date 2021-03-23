@@ -15,8 +15,8 @@ class Vuelo extends Migration
     {
         Schema::create('vue', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_ruta');
-            $table->foreign('id_ruta')->references('id')->on('ruta');
+            $table->string('id_ruta',80);
+            $table->foreign('id_ruta')->references('origen')->on('ruta');
             $table->date('Fecha');
             $table->string('hora_salida',30);
             $table->string('hora_llegada',30);

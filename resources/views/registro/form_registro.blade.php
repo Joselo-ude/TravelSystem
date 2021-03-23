@@ -6,8 +6,7 @@
     <form action="{{ url('clientes/registrar') }}" method="POST">
         @csrf
         
-        <label for="idCli">ID</label>
-        <input type="text" id='idCli' name='idCli' class="form-control" required> <br> <br>
+       
 
         <label for="cedulaCli">Cedula </label>
         <input type="text" id='cedulaCli' name='cedulaCli' class="form-control" required> <br> <br>

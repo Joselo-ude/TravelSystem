@@ -12,6 +12,11 @@ class Ruta extends Controller
         $ruta = Rutas::all();   
         return view('rutas.detalle',['ruta' => $ruta] );
     }
+    public function index2(){
+        // Consultar clientes con Eloquent
+        $ruta = Rutas::all();   
+        return view('visualizar.detalleRuta',['ruta' => $ruta] );
+    }
 
     public function form_registro()  {
         return view('rutas.form_registro');
@@ -26,7 +31,7 @@ class Ruta extends Controller
         
         
         $category->save();
-        return redirect()->route('listado_Ruta');
+        return redirect()->route('listado_Rutas');
     }
 
     public function form_actualiza($id){
@@ -42,13 +47,13 @@ class Ruta extends Controller
         ;
         
         $ruta->save();
-        return redirect()->route('listado_Ruta');  
+        return redirect()->route('listado_Rutas');  
     }
 
     public function eliminar($id)
     {
         $ruta = Rutas::findOrFail($id);
         $ruta->delete();
-        return redirect()->route('listado_Ruta');
+        return redirect()->route('listado_Rutas');
     }
 }

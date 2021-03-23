@@ -15,7 +15,7 @@ class Clientes extends Migration
     {
        
         Schema::create('cliente', function (Blueprint $table) {
-            $table->id();
+            
             $table->string('cedula',20);
             $table->string('nombres',30);
             $table->string('apellidos', 30); 

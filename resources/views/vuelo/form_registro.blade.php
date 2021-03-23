@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master2')
    @section('content')
 
 <div class="container">
@@ -14,7 +14,7 @@
         <label for="idRuta"> Origen</label> 
         <select class="custom-select" id="idRuta" name="idRuta">
             @foreach($ruta as $c)
-            <option value="{{$c->id}}">{{$c->origen}}</option>
+            <option value="{{$c->origen}}">{{$c->id}}</option>
             
             @endforeach
         </select>

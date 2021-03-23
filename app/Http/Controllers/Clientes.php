@@ -20,7 +20,7 @@ class Clientes extends Controller
 
     public function registrar(Request $request) {
         $cliente = new Cliente();
-        $cliente->id = $request->input('idCli');
+       
         $cliente->cedula = $request->input('cedulaCli');
         $cliente->nombres = $request->input('nombreCli');
         $cliente->apellidos = $request->input('apellidosCli');
@@ -32,16 +32,16 @@ class Clientes extends Controller
         return redirect()->route('listado_clientes');
     }
 
-    public function form_actualiza($id){
+    public function form_actualiza($cedula){
         // Funcion que genera el formulario de actualizacion con base en la categoria seleccionada
-        $cliente = Cliente::findOrFail($id);
+        $cliente = Cliente::findOrFail($cedula);
         return view ('registro.form_actualiza', compact('cliente'));
     }
 
-    public function actualizar(Request $request, $id)
+    public function actualizar(Request $request, $cedula)
     {
-        $cliente = Cliente::findOrFail($id);
-        $cliente->cedula = $request->input('cedulaCli');
+        $cliente = Cliente::findOrFail($cedula);
+       // $cliente->cedula = $request->input('cedulaCli');
         $cliente->nombres = $request->input('nombreCli');
         $cliente->apellidos = $request->input('apellidosCli');
         $cliente->correo = $request->input('correoCli');
@@ -52,9 +52,9 @@ class Clientes extends Controller
         return redirect()->route('listado_clientes');  
     }
 
-    public function eliminar($id)
+    public function eliminar($cedula)
     {
-        $c = Cliente::findOrFail($id);
+        $c = Cliente::findOrFail($cedula);
         $c->delete();
         return redirect()->route('listado_clientes');
     }

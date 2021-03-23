@@ -13,6 +13,13 @@ class Vuelo extends Controller
         $vue = Vuelos::all();   
         return view('vuelo.detalle',['vue' => $vue] );
     }
+    public function index2(){
+        // Consultar clientes con Eloquent
+        $vue = Vuelos::all();   
+        return view('visualizar.detalleCompra',['vue' => $vue] );
+    }
+   
+   
 
     public function form_registro()  {
         $ruta = Rutas::all();
@@ -32,7 +39,7 @@ class Vuelo extends Controller
        
         
         $vue->save();
-        return redirect()->route('listado_Vuelo');
+        return redirect()->route('listado_Vuelos');
     }
 
     public function form_actualiza($id){
@@ -55,13 +62,13 @@ class Vuelo extends Controller
         
        
         $vue->save();
-        return redirect()->route('listado_Vuelo');  
+        return redirect()->route('listado_Vuelos');  
     }
 
     public function eliminar($id)
     {
         $c = Vuelos::findOrFail($id);
         $c->delete();
-        return redirect()->route('listado_Vuelo');
+        return redirect()->route('listado_Vuelos');
     }
 }
